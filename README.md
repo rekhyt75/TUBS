@@ -1,2 +1,4 @@
 # TUBS
-The Unified Brewing System
+The Ultimate Brewing System - the comprehensive tool for homebrewers
+
+
