@@ -58,7 +58,5 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>tubs-app</module>
-    </modules>
+    <modules></modules>
 </project>
