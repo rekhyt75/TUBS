@@ -11,7 +11,7 @@
 
     
     <artifactId>tubs-app</artifactId>
-    <name>tubs-app</name>
+    <name>TUBS - App for The Unified Brewing System</name>
 
     <packaging>jar</packaging>
   
@@ -21,37 +21,12 @@
         <name>ilforumdellabirra.net</name>
     </organization>
 
-    <properties>
-        
-    </properties>
-
-    <build>
-
-        <finalName>tubs-app</finalName>
-
-        <plugins>
-
-            <plugin>
-                <groupId>com.zenjava</groupId>
-                <artifactId>javafx-maven-plugin</artifactId>
-                <version>8.1.5</version>
-                <configuration>
-
-                    <mainClass>net.ilforumdellabirra.tubs.MainApp</mainClass>
-
-                    <!-- only required if signing the jar file -->
-                    <keyStoreAlias>example-user</keyStoreAlias>
-                    <keyStorePassword>example-password</keyStorePassword>
-                    <allPermissions>true</allPermissions>
-
-                </configuration>
-            </plugin>
-
-        </plugins>
-    </build>
-
-
     <dependencies>
+        
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>tubs-core</artifactId>
+        </dependency>
     
         <!-- MigLayout -->
 
@@ -62,15 +37,44 @@
         </dependency>
 
         <!-- Apache Commons -->
-
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
+        </dependency>
+        
+        <!-- ControlsFX -->
+        <dependency>
+            <groupId>org.controlsfx</groupId>
+            <artifactId>controlsfx</artifactId>
+            <version>8.40.12</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.jfxtras/jfxtras-labs -->
+        <dependency>
+            <groupId>org.jfxtras</groupId>
+            <artifactId>jfxtras-labs</artifactId>
+            <version>8.0-r5</version>
         </dependency>
 
         
-
     </dependencies>
 
+    <build>
+        <finalName>tubs-app</finalName>
+        <plugins>
+            <plugin>
+                <groupId>com.zenjava</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>8.1.5</version>
+                <configuration>
+                    <mainClass>net.ilforumdellabirra.tubs.MainApp</mainClass>
+                    <!-- only required if signing the jar file -->
+                    <keyStoreAlias>example-user</keyStoreAlias>
+                    <keyStorePassword>example-password</keyStorePassword>
+                    <allPermissions>true</allPermissions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
 </project>

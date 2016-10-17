@@ -1,4 +1,4 @@
-package net.ilforumdellabirra.tubs;
+package net.ilforumdellabirra.tubs.fx;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

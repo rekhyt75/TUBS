@@ -6,7 +6,7 @@
 <?import org.tbee.javafx.scene.layout.fxml.MigPane?>
 
 
-<MigPane id="rootPane" fx:controller="net.ilforumdellabirra.tubs.HelloController"
+<MigPane id="rootPane" fx:controller="net.ilforumdellabirra.tubs.fx.HelloController"
         styleClass="main-panel"
         layout="insets 20"
         cols="[label, pref!][grow, 50::]"
