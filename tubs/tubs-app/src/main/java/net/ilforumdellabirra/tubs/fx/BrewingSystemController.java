@@ -8,13 +8,11 @@ package net.ilforumdellabirra.tubs.fx;
 import java.math.BigDecimal;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -60,19 +58,19 @@ public class BrewingSystemController implements Initializable {
     private BigDecimalField exhaustedGrainAbsorption;
 
     @FXML
-    private ProgressBar waterGrainRatio;
+    private BigDecimalField waterGrainRatio;
 
     @FXML
     private Label waterGrainRatioValue;
 
     @FXML
-    private ProgressBar evaporationRate;
+    private Slider evaporationRate;
 
     @FXML
     private Label evaporationRateValue;
 
     @FXML
-    private ProgressBar coolingContraction;
+    private Slider coolingContraction;
 
     @FXML
     private Label coolingContractionValue;
@@ -101,18 +99,21 @@ public class BrewingSystemController implements Initializable {
         efficiency.valueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
             Utils.setSliderValue(efficiency, efficiencyValue);
         });
-        
-        
-        
+
+        evaporationRate.valueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
+            Utils.setSliderValue(evaporationRate, evaporationRateValue);
+        });
+
+        coolingContraction.valueProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> {
+            Utils.setSliderValue(coolingContraction, coolingContractionValue);
+        });
+
         // Clear person details.
         showBrewingSystemDetails(null);
 
         // Listen for selection changes and show the person details when changed.
         brewingSystemTable.getSelectionModel().selectedItemProperty().addListener(
                 (observable, oldValue, newValue) -> showBrewingSystemDetails(newValue));
-        
-        
-        
 
     }
 
@@ -141,9 +142,9 @@ public class BrewingSystemController implements Initializable {
                 Utils.setSliderValue(efficiency, efficiencyValue, parameters.getEfficiency());
                 biab.setSelected(parameters.getBiab());
                 exhaustedGrainAbsorption.setNumber(parameters.getExhaustedGrainAbsorption());
-                Utils.setProgressBarValue(waterGrainRatio, waterGrainRatioValue, parameters.getWaterGrainRatio());
-                Utils.setProgressBarValue(evaporationRate, evaporationRateValue, parameters.getEvaporationRate());
-                Utils.setProgressBarValue(coolingContraction, coolingContractionValue, parameters.getCoolingContraction());
+                waterGrainRatio.setNumber(parameters.getWaterGrainRatio());
+                Utils.setSliderValue(evaporationRate, evaporationRateValue, parameters.getEvaporationRate());
+                Utils.setSliderValue(coolingContraction, coolingContractionValue, parameters.getCoolingContraction());
                 trubLoss.setNumber(parameters.getTrubLoss());
             }
             // TODO: We need a way to convert the birthday into a String!
