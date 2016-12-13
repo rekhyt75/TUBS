@@ -6,9 +6,9 @@
 package net.ilforumdellabirra.tubs.core;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.prefs.Preferences;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javax.xml.bind.JAXBContext;
@@ -57,13 +57,30 @@ public class ModelReader {
             BrewingSystem b1 = new BrewingSystem();
             b1.setName("DEFAULT");
             b1.setDescription("Impianto di default");
+            BrewingSystemParameters b1Parameters = new BrewingSystemParameters();
+            b1Parameters.setBiab(Boolean.FALSE);
+            b1Parameters.setCoolingContraction(BigDecimal.valueOf(4));
+            b1Parameters.setEfficiency(BigDecimal.valueOf(75));
+            b1Parameters.setEvaporationRate(BigDecimal.valueOf(15));
+            b1Parameters.setExhaustedGrainAbsorption(BigDecimal.valueOf(1.4));
+            b1Parameters.setFinalVolume(BigDecimal.valueOf(23));
+            b1Parameters.setTrubLoss(BigDecimal.valueOf(2));
+            b1Parameters.setWaterGrainRatio(BigDecimal.valueOf(3));
+            b1.setParameters(b1Parameters);
 
             BrewingSystem b2 = new BrewingSystem();
             b2.setName("BIAB");
             b2.setDescription("Impianto BIAB di default");
-            BrewingSystemParameters bsp2 = new BrewingSystemParameters();
-            bsp2.setBiab(Boolean.TRUE);
-            b2.setParameters(bsp2);
+            BrewingSystemParameters b2Parameters = new BrewingSystemParameters();
+            b2Parameters.setBiab(Boolean.TRUE);
+            b2Parameters.setCoolingContraction(BigDecimal.valueOf(4));
+            b2Parameters.setEfficiency(BigDecimal.valueOf(75));
+            b2Parameters.setEvaporationRate(BigDecimal.valueOf(15));
+            b2Parameters.setExhaustedGrainAbsorption(BigDecimal.valueOf(1.4));
+            b2Parameters.setFinalVolume(BigDecimal.valueOf(23));
+            b2Parameters.setTrubLoss(BigDecimal.valueOf(2));
+            b2Parameters.setWaterGrainRatio(BigDecimal.valueOf(3));
+            b2.setParameters(b2Parameters);
 
             brewingSystemsList.add(b1);
             brewingSystemsList.add(b2);

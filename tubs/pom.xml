@@ -97,6 +97,5 @@
 		<module>tubs-model</module>
 		<module>tubs-core</module>
 		<module>tubs-app</module>
-		<module>tubs-db</module>
 	</modules>
 </project>

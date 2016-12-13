@@ -133,7 +133,7 @@
                                 </HBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                     <children>
-                                        <BigDecimalField fx:id="exhaustedGrainAbsorption" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="34" />
+                                        <BigDecimalField fx:id="exhaustedGrainAbsorption" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="" />
                                         <Label maxHeight="1.7976931348623157E308" text="Litri/Kg">
                                             <padding>
                                                 <Insets left="5.0" />
