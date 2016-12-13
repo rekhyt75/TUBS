@@ -1,0 +1,156 @@
+@startuml
+
+class Impianto {
+	String nome
+	ParametriImpianto parametri
+	Map<BloccoCottura.Tipo, BloccoCottura> blocchiCottura
+}
+
+class ParametriImpianto {
+  	Double assorbimentoGraniEsausti;
+	Double rapportoAcquaGrani;
+	Double percentualeEvaporazione;
+	Double contrazionePerRaffeddamento;
+	Double perditeNelTrub;
+}
+
+class BloccoCottura {
+	BloccoCottura.Tipo tipo
+	Pentola pentola
+	ImpiantoRiscaldalmento impiantoRiscaldalmento
+	Strumentazione strumentazione
+}
+
+class Pentola {
+	Double volumeMax
+	Double volume
+}
+
+class PentolaMotorizzata {
+	Pala pala
+}
+
+class Pala {
+
+}
+
+class ImpiantoRiscaldalmento {
+	ImpiantoRiscaldalmento.Tipo tipo
+}
+
+class Strumentazione {
+	Termometro termometro
+}
+
+class Termometro {
+	Termometro.Scala scala
+	Double temperatura
+}
+
+enum Termometro.Scala {
+    CELSIUS, FAHRENHEIT, KELVIN
+}
+
+enum ImpiantoRiscaldalmento.Tipo {
+    
+}
+
+enum BloccoCottura.Tipo {
+    
+}
+
+Impianto "1" *-- "many" BloccoCottura : contains
+Impianto "1" *-- "1" ParametriImpianto : contains
+
+BloccoCottura "1" *-- "1" Pentola : contains
+BloccoCottura "1" *-- "1" ImpiantoRiscaldalmento : contains
+BloccoCottura "1" *-- "1" Strumentazione : contains
+BloccoCottura  -- BloccoCottura.Tipo
+
+Termometro  --  Termometro.Scala
+
+Strumentazione "1" *-- "1" Termometro : contains
+
+Pentola <|-- PentolaMotorizzata
+PentolaMotorizzata "1" *-- "1" Pala : contains
+
+class Ricetta {
+	String nome
+	List<Fermentabile> fermentabili
+	List<Spezia> spezie
+	List<Lievito> lieviti
+	
+}
+
+class Fermentabile {
+  	String nome
+	Forma forma
+	SG sg
+	EBC ebc
+	SRM srm
+}
+
+class Malto {
+	Categoria categoria
+}
+
+class Categoria {
+	String codice
+	String nome
+	Double pH
+}
+
+class Spezia {
+	String nome
+	String descrizione
+	String origine
+	Utilizzo utilizzo
+	Double pesoGittata
+	Double tempo
+	boolean dryhoping
+}
+
+class Luppolo {
+	
+	Double AA
+	Double HSI
+}
+
+class Lievito {
+	String nome
+}
+
+class ProfiloMash {
+	S tring nome
+	int numero
+	Double tempo
+	Double temperatura
+}
+
+class Cotta {
+	int n
+	String nome
+	Impianto impianto
+	Ricetta ricetta
+	List<ProfiloMash> profiliMash;
+	Double volumeCotta
+}
+
+
+
+Ricetta "1" *-- "many" Fermentabile : contains
+Ricetta "1" *-- "many" Spezia : contains 
+Ricetta "1" *-- "many" Lievito : contains 
+Cotta "1" *-- "many" ProfiloMash : contains 
+Malto "1" *-- "1" Categoria: contains
+Cotta "1" *-- "1" Impianto: contains
+Cotta "1" *-- "1" Ricetta: contains
+
+ImpiantoRiscaldalmento -- ImpiantoRiscaldalmento.Tipo
+
+
+
+Fermentabile <|-- Malto
+Spezia <|-- Luppolo
+
+@enduml
