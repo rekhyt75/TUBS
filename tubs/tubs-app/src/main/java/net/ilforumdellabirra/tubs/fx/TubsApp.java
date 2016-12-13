@@ -1,6 +1,8 @@
 package net.ilforumdellabirra.tubs.fx;
 
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,6 +40,7 @@ public class TubsApp extends Application {
 		String fxmlFile = "/fxml/tubs.fxml";
 		LOG.debug("Loading FXML for main view from: {}", fxmlFile);
 		FXMLLoader loader = new FXMLLoader();
+		loader.setResources(ResourceBundle.getBundle("bundle.project", Locale.getDefault()));
 		Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
 		TubsController tubsController = loader.getController();

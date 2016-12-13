@@ -13,24 +13,24 @@
     <children>
         <MenuBar>
             <menus>
-                <Menu disable="true" mnemonicParsing="false" text="File">
+                <Menu disable="true" mnemonicParsing="false" text="%menu.file">
                     <items>
                         <MenuItem mnemonicParsing="false" text="Close" />
                     </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Config">
+                <Menu mnemonicParsing="false" text="%menu.config">
                     <items>
                         <MenuItem fx:id="configBrewingSystem" mnemonicParsing="false" onAction="#openConfigBrewingSystem" text="Brewing System" />
                     </items>
                 </Menu>
-                <Menu disable="true" mnemonicParsing="false" text="Tools">
+                <Menu mnemonicParsing="false" text="%menu.tools">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" text="%menu.store" />
                     </items>
                 </Menu>
-                <Menu disable="true" mnemonicParsing="false" text="Help">
+                <Menu disable="true" mnemonicParsing="false" text="%menu.help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem mnemonicParsing="false" text="%menu.about" />
                     </items>
                 </Menu>
             </menus>
