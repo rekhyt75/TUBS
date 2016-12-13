@@ -61,15 +61,15 @@
                                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                             </rowConstraints>
                             <children>
-                                <Label text="Name" />
-                                <Label text="Description" GridPane.rowIndex="1" />
-                                <Label text="Final Volume" GridPane.rowIndex="2" />
-                                <Label text="Efficiency" GridPane.rowIndex="3" />
-                                <Label text="Exhausted Grain Absorption" GridPane.rowIndex="5" />
-                                <Label text="Water/Grain Ratio" GridPane.rowIndex="6" />
-                                <Label text="Evaporation Rate" GridPane.rowIndex="7" />
-                                <Label text="Cooling Contraction" GridPane.rowIndex="8" />
-                                <Label text="Trub Loss" GridPane.rowIndex="9" />
+                                <Label text="%name" />
+                                <Label text="%description" GridPane.rowIndex="1" />
+                                <Label text="%final.volume" GridPane.rowIndex="2" />
+                                <Label text="%efficiency" GridPane.rowIndex="3" />
+                                <Label text="%exhausted.grain.absorption" GridPane.rowIndex="5" />
+                                <Label text="%water.grain.ratio" GridPane.rowIndex="6" />
+                                <Label text="%evaporation.rate" GridPane.rowIndex="7" />
+                                <Label text="%cooling.contraction" GridPane.rowIndex="8" />
+                                <Label text="%trub.loss" GridPane.rowIndex="9" />
                                 <TextField fx:id="name" GridPane.columnIndex="1" GridPane.columnSpan="2">
                                     <GridPane.margin>
                                         <Insets left="1.0" />

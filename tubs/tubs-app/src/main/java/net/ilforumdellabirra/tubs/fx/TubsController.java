@@ -8,6 +8,7 @@ package net.ilforumdellabirra.tubs.fx;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,13 +31,13 @@ import net.ilforumdellabirra.tubs.fx.model.Model;
 public class TubsController implements Initializable {
 
     private Model model;
-    
-    
+
     @FXML
     MenuItem configBrewingSystem;
 
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
@@ -48,30 +49,16 @@ public class TubsController implements Initializable {
     public void openConfigBrewingSystem() {
         try {
             System.out.println("net.ilforumdellabirra.tubs.TubsController.openConfigBrewingSystem()");
-//            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/brewing-system.fxml"));
-            
-//         Parent root1 = (Parent) fxmlLoader.load();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setResources(ResourceBundle.getBundle("bundle.project", Locale.getDefault()));
+            loader.setLocation(getClass().getResource("/fxml/brewing-system.fxml"));
 
-//            FXMLLoader loader = new FXMLLoader();
-//            
-//            InputStream is = getClass().getResourceAsStream("/fxml/brewing-system.fxml");
-//            
-//            Parent root1 = (Parent) loader.load(getClass().getResourceAsStream("/fxml/brewing-system.fxml"));
+            Parent root1 = (Parent) loader.load();
 
-            
-            
-             FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/brewing-system.fxml"));
-//        AnchorPane personOverview = (AnchorPane) loader.load();
-    
-Parent root1 = (Parent) loader.load();
-            
             // Give the controller access to the main app.
-        BrewingSystemController brewingSystemController = loader.getController();
-        brewingSystemController.setModel(model);
+            BrewingSystemController brewingSystemController = loader.getController();
+            brewingSystemController.setModel(model);
 
-            
-            
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.DECORATED);
@@ -79,14 +66,12 @@ Parent root1 = (Parent) loader.load();
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException ex) {
-           Logger.getLogger(TubsController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TubsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
     public void setModel(Model model) {
         this.model = model;
     }
-    
-    
 
 }
