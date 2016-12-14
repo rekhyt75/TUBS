@@ -10,4 +10,11 @@
     <packaging>jar</packaging>
     <name>TUBS - Model</name>
     
+    <dependencies>
+        <dependency>
+            <groupId>net.ilforumdellabirra</groupId>
+            <artifactId>beerxml-model</artifactId>
+        </dependency>
+    </dependencies>
+    
 </project>
