@@ -13,35 +13,36 @@ import java.io.Serializable;
  */
 public class BrewingSystem implements Serializable {
 
-    private String name;
-    private String description;
-    private BrewingSystemParameters parameters;
+	private static final long serialVersionUID = -2888900094001915868L;
+	private String name;
+	private String description;
+	private BrewingSystemParameters parameters;
 
-    public BrewingSystem() {
-    }
+	public BrewingSystem() {
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public String getDescription() {
-        return description;
-    }
+	public String getDescription() {
+		return description;
+	}
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
-    public BrewingSystemParameters getParameters() {
-        return parameters;
-    }
+	public BrewingSystemParameters getParameters() {
+		return parameters;
+	}
 
-    public void setParameters(BrewingSystemParameters parameters) {
-        this.parameters = parameters;
-    }
+	public void setParameters(BrewingSystemParameters parameters) {
+		this.parameters = parameters;
+	}
 
 }
