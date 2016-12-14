@@ -82,7 +82,7 @@
                                 </TextField>
                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                                     <children>
-                                        <BigDecimalField fx:id="waterGrainRatio" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" stepwidth="0.1" />
+                                        <BigDecimalField fx:id="waterGrainRatio" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" promptText="0" stepwidth="0.1" />
                                         <Label maxHeight="1.7976931348623157E308" text="Litri/Kg">
                                             <padding>
                                                 <Insets left="5.0" />
@@ -123,7 +123,7 @@
                                 </CheckBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                     <children>
-                                        <BigDecimalField fx:id="finalVolume" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                        <BigDecimalField fx:id="finalVolume" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="0" />
                                         <Label maxHeight="1.7976931348623157E308" text="Litri">
                                             <padding>
                                                 <Insets left="5.0" />
@@ -133,7 +133,7 @@
                                 </HBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                     <children>
-                                        <BigDecimalField fx:id="exhaustedGrainAbsorption" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="" />
+                                        <BigDecimalField fx:id="exhaustedGrainAbsorption" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="0" />
                                         <Label maxHeight="1.7976931348623157E308" text="Litri/Kg">
                                             <padding>
                                                 <Insets left="5.0" />
@@ -143,7 +143,7 @@
                                 </HBox>
                                 <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="9">
                                     <children>
-                                        <BigDecimalField fx:id="trubLoss" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" />
+                                        <BigDecimalField fx:id="trubLoss" maxWidth="70.0" minWidth="70.0" prefWidth="70.0" text="0" />
                                         <Label maxHeight="1.7976931348623157E308" text="Litri">
                                             <padding>
                                                 <Insets left="5.0" />
