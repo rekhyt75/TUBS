@@ -57,7 +57,7 @@
                                 </plugin>
                             </plugins>
                             <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
-                            <generatePackage>net.ilforumdellabirra.beerxml.model</generatePackage>
+                            <generatePackage>com.beerxml</generatePackage>
                         </configuration>
                     </execution>
                 </executions>
