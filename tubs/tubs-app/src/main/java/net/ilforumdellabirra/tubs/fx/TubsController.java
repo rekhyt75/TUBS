@@ -12,6 +12,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,9 +30,9 @@ import net.ilforumdellabirra.tubs.fx.model.Model;
  * @author YYE9497
  */
 public class TubsController implements Initializable {
-
+	
     private Model model;
-
+    
     @FXML
     MenuItem configBrewingSystem;
 
@@ -62,7 +63,7 @@ public class TubsController implements Initializable {
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.initStyle(StageStyle.DECORATED);
-            stage.setTitle("Config your brewing sytems");
+            stage.setTitle(loader.getResources().getString("title.configSystem"));
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (IOException ex) {
@@ -70,6 +71,25 @@ public class TubsController implements Initializable {
         }
     }
 
+    public void openMaltsList() {
+    	try {
+	    	FXMLLoader loader = new FXMLLoader();
+	        loader.setResources(ResourceBundle.getBundle("bundle.project", Locale.getDefault()));
+	        loader.setLocation(getClass().getResource("/fxml/Malts.fxml"));
+	        Parent root1 = (Parent) loader.load();
+	        
+	        Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.DECORATED);
+            stage.setTitle(loader.getResources().getString("title.listMalts"));
+            stage.setScene(new Scene(root1));
+            stage.show();
+            
+    	} catch (IOException ex) {
+            Logger.getLogger(TubsController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     public void setModel(Model model) {
         this.model = model;
     }

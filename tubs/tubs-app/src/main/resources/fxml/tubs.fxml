@@ -20,6 +20,7 @@
                 </Menu>
                 <Menu mnemonicParsing="false" text="%menu.config">
                     <items>
+                  		<MenuItem mnemonicParsing="false" onAction="#openMaltsList" text="Malts" />
                         <MenuItem fx:id="configBrewingSystem" mnemonicParsing="false" onAction="#openConfigBrewingSystem" text="%brewing.system" />
                     </items>
                 </Menu>
