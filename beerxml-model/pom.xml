@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.ilforumdellabirra</groupId>
     <artifactId>beerxml-model</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0-FINAL</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,43 +28,33 @@
                     </configuration>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.13.1</version>
+            
+			<plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>2.2</version>
                 <executions>
                     <execution>
-                        <id>BJCP schema</id>
+                        <id>xjc</id>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>xjc</goal>
                         </goals>
-                        <configuration>
-                            <schemaDirectory>${basedir}/src/main/resources/schema</schemaDirectory>
-                            <includeSchemas>
-                                <includeSchema>**/*.xsd</includeSchema>
-                            </includeSchemas>
-                            <extension>true</extension>
-                            <args>
-                                <arg>-enableIntrospection</arg>
-                            </args>
-                            <removeOldOutput>true</removeOldOutput>
-                            <verbose>true</verbose>
-                            <plugins>
-                                <plugin>
-                                    <groupId>org.jvnet.jaxb2_commons</groupId>
-                                    <artifactId>jaxb2-basics</artifactId>
-                                    <version>1.11.1</version>
-                                </plugin>
-                            </plugins>
-                            <generateDirectory>${project.build.directory}/generated-sources/xjc</generateDirectory>
-                            <generatePackage>com.beerxml</generatePackage>
-                        </configuration>
                     </execution>
                 </executions>
+                <configuration>
+                	<packageName>com.beerxml</packageName>
+                	<enableIntrospection>true</enableIntrospection>
+                    <target>2.1</target>
+                    <sources>
+                    	<source>${basedir}/src/main/resources/schema/BeerXML1.xsd</source>
+                    </sources>
+
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+                <version>2.0.4</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -77,6 +67,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
