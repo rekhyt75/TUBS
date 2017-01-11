@@ -73,10 +73,14 @@ public class TubsController implements Initializable {
 
     public void openMaltsList() {
     	try {
+    		System.out.println("net.ilforumdellabirra.tubs.TubsController.openMaltsList()");
 	    	FXMLLoader loader = new FXMLLoader();
 	        loader.setResources(ResourceBundle.getBundle("bundle.project", Locale.getDefault()));
-	        loader.setLocation(getClass().getResource("/fxml/Malts.fxml"));
+	        loader.setLocation(getClass().getResource("/fxml/malts.fxml"));
 	        Parent root1 = (Parent) loader.load();
+	        
+	        MaltsController maltsController = loader.getController();
+	       // maltsController.initialize(location, resources);
 	        
 	        Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -85,7 +89,7 @@ public class TubsController implements Initializable {
             stage.setScene(new Scene(root1));
             stage.show();
             
-    	} catch (IOException ex) {
+    	} catch (Exception ex) {
             Logger.getLogger(TubsController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
