@@ -1,26 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane minHeight="539.0" minWidth="469.0" prefHeight="539.0" prefWidth="469.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.ilforumdellabirra.tubs.fx.MaltsController">
+<AnchorPane minHeight="539.0" minWidth="469.0" prefHeight="539.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.ilforumdellabirra.tubs.fx.MaltsController">
    <children>
-      <TableView fx:id="tblMalt" prefHeight="465.0" prefWidth="469.0" AnchorPane.bottomAnchor="74.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TableView fx:id="tblMalt" prefHeight="539.0" prefWidth="469.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columns>
-          <TableColumn prefWidth="103.0" text="%tbl.malt.name" />
-          <TableColumn prefWidth="109.0" text="%tbl.malt.shape" />
-            <TableColumn prefWidth="171.0" text="%tbl.malt.category" />
+          <TableColumn prefWidth="103.0" text="%tbl.malt.name" fx:id="nameColumn" editable="true" />
+          <TableColumn prefWidth="109.0" text="%tbl.malt.shape" fx:id="shapeColumn"/>
+          <TableColumn prefWidth="171.0" text="%tbl.malt.category" fx:id="categoryColumn"/>
         </columns>
       </TableView>
-      <ButtonBar layoutX="14.0" layoutY="477.0" prefHeight="40.0" prefWidth="447.0" AnchorPane.bottomAnchor="22.0" AnchorPane.rightAnchor="8.0">
-        <buttons>
-            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addMalt" text="%btn.add" />
-            <Button fx:id="btnModify" mnemonicParsing="false" text="%btn.modify" />
-            <Button fx:id="btnDelete" mnemonicParsing="false" text="%btn.delete" />
-        </buttons>
-      </ButtonBar>
+      <VBox layoutX="469.0" prefHeight="539.0" prefWidth="130.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <children>
+            <Button fx:id="btnNew" mnemonicParsing="false" onAction="#newMalt" text="%btn.new" />
+            <Button fx:id="btnModify" mnemonicParsing="false" text="%btn.delete" />
+            <Button fx:id="btnDelete" mnemonicParsing="false" text="%btn.modify" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

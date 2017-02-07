@@ -45,7 +45,8 @@ public class TubsApp extends Application {
 
 		TubsController tubsController = loader.getController();
 		tubsController.setModel(model);
-
+		tubsController.setTubsApp(this);
+		
 		LOG.debug("Showing JFX scene");
 		Scene scene = new Scene(rootNode, 400, 200);
 		scene.getStylesheets().add("/styles/tubs.css");

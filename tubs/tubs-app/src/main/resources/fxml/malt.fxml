@@ -2,23 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.ilforumdellabirra.tubs.fx.MaltController">
    <children>
       <Pane prefHeight="400.0" prefWidth="350.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <TextField layoutX="14.0" layoutY="33.0" />
-            <TextField layoutX="14.0" layoutY="67.0" />
-            <TextField layoutX="14.0" layoutY="104.0" />
+            <Label layoutX="49.0" layoutY="37.0" text="%tbl.malt.name" /><TextField fx:id="edtMaltName" layoutX="132.0" layoutY="33.0" />
+            <Label layoutX="49.0" layoutY="71.0" text="%tbl.malt.shape" /><TextField fx:id="edtMaltShape" layoutX="132.0" layoutY="67.0" />
+            <Label layoutX="49.0" layoutY="108.0" text="%tbl.malt.category" /><TextField fx:id="edtMaltCategory" layoutX="132.0" layoutY="104.0" />
             <ButtonBar layoutX="1.0" layoutY="363.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="35.0" prefWidth="350.0">
               <buttons>
-                <Button mnemonicParsing="false" text="Button" />
-                  <Button mnemonicParsing="false" text="Chiudi" />
+                  <Button fx:id="btnSave" mnemonicParsing="false" text="%btn.save" onAction="#AddMalt"/>
+                  <Button fx:id="btnClose" mnemonicParsing="false" text="%btn.close" onAction="#CloseForm" />
               </buttons>
             </ButtonBar>
+           
+            
+            
          </children>
       </Pane>
    </children>

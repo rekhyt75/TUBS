@@ -6,7 +6,6 @@ package net.ilforumdellabirra.tubs.fx;
  * and open the template in the editor.
  */
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.Locale;
 import java.util.ResourceBundle;
@@ -32,10 +31,11 @@ import net.ilforumdellabirra.tubs.fx.model.Model;
 public class TubsController implements Initializable {
 	
     private Model model;
+    private TubsApp tubsApp;
     
     @FXML
     MenuItem configBrewingSystem;
-
+    
     /**
      * Initializes the controller class.
      *
@@ -79,7 +79,8 @@ public class TubsController implements Initializable {
 	        loader.setLocation(getClass().getResource("/fxml/malts.fxml"));
 	        Parent root1 = (Parent) loader.load();
 	        
-	        MaltsController maltsController = loader.getController();
+	       // MaltsController maltsController = loader.getController();
+	      //  maltsController.setTubsApp(this.tubsApp);
 	       // maltsController.initialize(location, resources);
 	        
 	        Stage stage = new Stage();
@@ -96,6 +97,10 @@ public class TubsController implements Initializable {
     
     public void setModel(Model model) {
         this.model = model;
+    }
+    
+    public void setTubsApp(TubsApp tubsApp) {
+    	this.tubsApp = tubsApp;
     }
 
 }

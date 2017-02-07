@@ -1,19 +1,23 @@
 package net.ilforumdellabirra.tubs.fx.model;
 
 import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 
 public final class Malt {
 	
-	private final SimpleStringProperty  name;
-	private final SimpleStringProperty  shape;
-	private final SimpleStringProperty  category;
+	private StringProperty  name;
+	private StringProperty  shape;
+	private StringProperty  category;
 	
 	public Malt() {
-		this.name = new SimpleStringProperty();
-		this.shape = new SimpleStringProperty();
-		this.category = new SimpleStringProperty();
 	}
-	
+
+	public Malt(String name, String shape, String category) {
+		this.name = new SimpleStringProperty(name);
+		this.shape = new SimpleStringProperty(shape);
+		this.category = new SimpleStringProperty(category);
+	}
+
 	public String getName() {
 		return name.get();
 	}
@@ -21,11 +25,19 @@ public final class Malt {
 		this.name.set(name);
 	}
 	
-	public String getShape() {
+    public StringProperty nameProperty() {
+        return name;
+    }
+	
+    public String getShape() {
 		return shape.get();
 	}
-	public void setShape() {
-		
+	public void setShape(String shape) {
+		this.shape.set(shape);
+	}
+	
+	public StringProperty shapeProperty() {
+		return shape;
 	}
 	
 	public String getCategory() {
@@ -33,6 +45,10 @@ public final class Malt {
 	}
 	public void setCategory(String category) {
 		this.category.set(category);
+	}
+	
+	public StringProperty categoryProperty() {
+		return category;
 	}
 	
 }
